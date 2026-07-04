@@ -527,17 +527,22 @@ body {
 }
 
 @media (max-width: 720px) {
-    .app-container { flex-direction: column; }
-    .sidebar {
-        width: 100%;
-        height: auto;
-        max-height: 40vh;
-        border-right: none;
-        border-bottom: 1px solid var(--hairline);
-    }
-    .chat-log { padding: 130px 4% 120px; }
-    .input-area { padding: 20px 4%; }
-    .report-card { padding: 22px 18px 16px; }
+    body { height: auto; overflow: auto; }
+    .app-container { flex-direction: column; height: auto; }
+    
+    .chat-container { height: 100vh; position: relative; order: 1; }
+    .chat-header { padding: 15px 5%; }
+    .chat-header h2 { font-size: 1.2rem; }
+    .chat-header p { font-size: 0.8rem; }
+    .chat-log { padding: 110px 5% 100px; }
+    
+    .input-area { padding: 15px 5%; background: linear-gradient(to top, var(--ink) 85%, transparent); }
+    #user-input { padding: 12px 50px 12px 15px; font-size: 0.9rem; }
+    #send-btn { width: 32px; height: 32px; right: 12px; }
+    
+    .report-card { padding: 20px 15px 15px; }
     .report-card::before { position: static; display: inline-block; margin-bottom: 10px; transform: none; }
-    .report-card h2 { padding-right: 0; }
+    .report-card h2 { padding-right: 0; font-size: 1.2rem; }
+    
+    .sidebar { width: 100%; height: auto; border-top: 1px solid var(--hairline); border-right: none; padding: 25px 5%; order: 2; }
 }

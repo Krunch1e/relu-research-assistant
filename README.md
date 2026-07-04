@@ -1,5 +1,7 @@
 # Relu Research Assistant
 
+> **Note to Evaluators (Live Demo):** This application is deployed on a free-tier hosting service (Render). **If the site hasn't been visited in 15 minutes, the server goes to sleep. The first time you load the page or run a search, it may take 30–50 seconds to wake up.** Please be patient on the initial load! After waking up, it runs at normal speeds.
+
 An AI-powered Company Research Assistant that enables users to research any company by providing either the company name or its website URL. The application automatically gathers information from the company’s website, analyzes the collected information using AI, identifies potential competitors, and generates a professional downloadable PDF report.
 
 ## Tech Stack

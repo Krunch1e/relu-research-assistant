@@ -37,7 +37,7 @@ Return JSON with exactly these keys:
   "address": "string or null",
   "products_services": ["string", "..."],
   "pain_points": ["string", "..."],
-  "summary": "Detailed 2-3 paragraph executive summary of the company's history, business model, and market position"
+  "summary": "Detailed executive summary. Use multiple distinct paragraphs separated by newlines (\\n). Include history, business model, and market position."
 }}
 """
 

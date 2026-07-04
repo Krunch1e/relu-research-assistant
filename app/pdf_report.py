@@ -49,8 +49,12 @@ def generate_pdf(report_data: dict) -> bytes:
     
     # Summary
     elements.append(Paragraph("Executive Summary", heading_style))
-    elements.append(Paragraph(clean_text(report_data.get('summary', 'No summary available.')), normal_style))
-    elements.append(Spacer(1, 20))
+    summary_text = clean_text(report_data.get('summary', 'No summary available.'))
+    for paragraph in summary_text.split('\n'):
+        if paragraph.strip():
+            elements.append(Paragraph(paragraph.strip(), normal_style))
+            elements.append(Spacer(1, 8))
+    elements.append(Spacer(1, 12))
     
     # Products & Services
     elements.append(Paragraph("Products & Services", heading_style))

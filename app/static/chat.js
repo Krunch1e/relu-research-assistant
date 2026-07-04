@@ -114,7 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 html += `<p style="color: var(--text-muted); font-size: 0.9em;">${report.phone || ''} | ${report.address || ''}</p>`;
             }
             
-            html += `<h3>Executive Summary</h3><p>${report.summary}</p>`;
+            const formattedSummary = report.summary.replace(/\n/g, '<br>');
+            html += `<h3>Executive Summary</h3><p>${formattedSummary}</p>`;
             
             html += `<h3>Products & Services</h3><ul>`;
             report.products_services.forEach(p => html += `<li>${p}</li>`);

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ company_name }} Report</title>
+    <style>
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333; line-height: 1.6; margin: 0; padding: 40px; }
+        .header { text-align: center; border-bottom: 2px solid #2563eb; padding-bottom: 20px; margin-bottom: 30px; }
+        .header h1 { margin: 0; color: #1e40af; font-size: 32px; }
+        .info-block { background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 25px; }
+        .info-block p { margin: 5px 0; font-size: 14px; }
+        .section { margin-bottom: 30px; }
+        .section h2 { color: #1e3a8a; font-size: 20px; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px; }
+        ul { margin-top: 10px; padding-left: 20px; }
+        li { margin-bottom: 8px; font-size: 14px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #cbd5e1; padding: 10px; text-align: left; font-size: 14px; }
+        th { background: #f1f5f9; color: #334155; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>{{ company_name }}</h1>
+        <p>Research & Competitor Report</p>
+    </div>
+
+    <div class="info-block">
+        <p><strong>Website:</strong> <a href="{{ website }}">{{ website }}</a></p>
+        <p><strong>Phone:</strong> {{ phone or 'N/A' }}</p>
+        <p><strong>Address:</strong> {{ address or 'N/A' }}</p>
+    </div>
+
+    <div class="section">
+        <h2>Executive Summary</h2>
+        <p>{{ summary }}</p>
+    </div>
+
+    <div class="section">
+        <h2>Products & Services</h2>
+        <ul>
+            {% for item in products_services %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Key Pain Points Solved</h2>
+        <ul>
+            {% for point in pain_points %}
+            <li>{{ point }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Top Competitors</h2>
+        <table>
+            <tr>
+                <th>Competitor Name</th>
+                <th>Website</th>
+            </tr>
+            {% for comp in competitors %}
+            <tr>
+                <td>{{ comp.name }}</td>
+                <td><a href="{{ comp.website }}">{{ comp.website }}</a></td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="2">No major competitors identified.</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

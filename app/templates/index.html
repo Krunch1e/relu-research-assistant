@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relu Research Desk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar / Settings -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span class="wordmark">Relu</span>
+                <span class="wordmark-tag">Research Desk</span>
+            </div>
+
+            <div class="settings-section">
+                <span class="panel-eyebrow">Intelligence Model</span>
+                <div class="form-group">
+                    <select id="model-select">
+                        <option value="openai/gpt-4o-mini">Loading models…</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="discord-settings">
+                <span class="panel-eyebrow">Case Routing <em>— optional</em></span>
+                <p class="panel-hint">Send a finished brief straight to a Discord channel.</p>
+                <div class="form-group">
+                    <label for="applicant-name">Applicant name</label>
+                    <input type="text" id="applicant-name" placeholder="Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label for="applicant-email">Applicant email</label>
+                    <input type="email" id="applicant-email" placeholder="jane@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="discord-token">Bot token</label>
+                    <input type="password" id="discord-token" placeholder="••••••••••••">
+                </div>
+                <div class="form-group">
+                    <label for="discord-channel">Channel ID</label>
+                    <input type="text" id="discord-channel" placeholder="123456789012345678">
+                </div>
+                <button id="save-discord-btn" class="secondary-btn">Save routing</button>
+            </div>
+
+            <div class="sidebar-foot">
+                <span class="status-dot"></span> Desk online
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-container">
+            <div class="chat-header">
+                <span class="panel-eyebrow">New Briefing</span>
+                <h2>Who are we looking into?</h2>
+                <p>Enter a company name or its website — I'll pull the file together.</p>
+            </div>
+
+            <div id="chat-log" class="chat-log">
+                <!-- Welcome Message -->
+                <div class="message assistant-message">
+                    <div class="avatar">RD</div>
+                    <div class="message-content">
+                        <p>Give me a company name (say, <em>Stripe</em>) or a URL and I'll assemble a briefing: contact details, products, likely pain points, and a competitor set — with a downloadable report at the end.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <form id="research-form">
+                    <input type="text" id="user-input" placeholder="Company name or URL…" required autocomplete="off">
+                    <button type="submit" id="send-btn" aria-label="Start research">
+                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </button>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="/static/chat.js"></script>
+</body>
+</html>

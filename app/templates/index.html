@@ -63,11 +63,16 @@
             </div>
 
             <div id="chat-log" class="chat-log">
-                <!-- Welcome Message -->
-                <div class="message assistant-message">
-                    <div class="avatar">RD</div>
-                    <div class="message-content">
-                        <p>Give me a company name (say, <em>Stripe</em>) or a URL and I'll assemble a briefing: contact details, products, likely pain points, and a competitor set — with a downloadable report at the end.</p>
+                <!-- Hero Landing State -->
+                <div id="hero-section" class="hero-section">
+                    <span class="hero-eyebrow">AI-POWERED INTELLIGENCE</span>
+                    <h1 class="hero-headline">Know any company<br>in minutes.</h1>
+                    <p class="hero-subtext">Enter a company name or website URL to get AI-powered insights, competitor analysis, pain points, and a professional PDF report.</p>
+                    <div class="hero-chips">
+                        <button type="button" class="example-chip">Tesla</button>
+                        <button type="button" class="example-chip">Figma</button>
+                        <button type="button" class="example-chip">Vercel</button>
+                        <button type="button" class="example-chip">Stripe</button>
                     </div>
                 </div>
             </div>
@@ -77,9 +82,10 @@
                 <form id="research-form">
                     <input type="text" id="user-input" placeholder="Company name or URL…" required autocomplete="off" autofocus>
                     <button type="submit" id="send-btn" aria-label="Start research">
-                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        Research →
                     </button>
                 </form>
+                <div class="input-hint">ENTER TO RESEARCH &middot; AUTOMATIC PDF GENERATION</div>
             </div>
         </main>
     </div>

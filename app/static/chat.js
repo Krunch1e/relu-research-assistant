@@ -48,11 +48,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Example chips logic
+    document.querySelectorAll('.example-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+            input.value = chip.textContent;
+            sendBtn.click();
+        });
+    });
+
     // 3. Handle Form Submission
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const query = input.value.trim();
         if (!query) return;
+
+        // Hide hero section on first submit
+        const hero = document.getElementById('hero-section');
+        if (hero) hero.style.display = 'none';
 
         // Add user message
         addMessage('user', query);

@@ -37,7 +37,7 @@ Return JSON with exactly these keys:
   "address": "string or null",
   "products_services": ["string", "..."],
   "pain_points": ["string", "..."],
-  "summary": "Detailed executive summary. Use multiple distinct paragraphs separated by newlines (\\n). Include history, business model, and market position."
+  "summary": "Detailed executive summary. You MUST use the literal exact characters '\\n\\n' (backslash n backslash n) between paragraphs to separate them. Write as many paragraphs or bullet points as needed to fully capture the company's history, business model, and market position."
 }}
 """
 
